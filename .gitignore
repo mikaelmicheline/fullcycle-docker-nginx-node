@@ -1,0 +1,2 @@
+mysql/mysqlData/*
+!mysql/mysqlData/.gitkeep
