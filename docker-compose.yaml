@@ -20,7 +20,7 @@ services:
     image: mikaelmicheline/fcnode
     container_name: fcnode
     entrypoint: wait-for fcmysql:3306 -t 20 -- /usr/local/bin/docker-entrypoint.sh 
-    command: sh -c "npm i && node index.js"
+    command: sh -c "npm i && npm run start"
     networks:
       - minhaRede
     volumes:
