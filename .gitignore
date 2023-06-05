@@ -1,2 +1,4 @@
 mysql/mysqlData/*
 !mysql/mysqlData/.gitkeep
+node/node_modules
+node/package-lock.json

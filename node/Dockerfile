@@ -12,7 +12,4 @@ WORKDIR /usr/src/app
 COPY index.js .
 COPY package.json .
 
-RUN npm i
-
 EXPOSE 3300
-

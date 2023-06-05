@@ -19,10 +19,13 @@ services:
       context: node
     image: mikaelmicheline/fcnode
     container_name: fcnode
-    entrypoint: wait-for fcmysql:3306 -t 20 -- /usr/local/bin/docker-entrypoint.sh node index.js
+    entrypoint: wait-for fcmysql:3306 -t 20 -- /usr/local/bin/docker-entrypoint.sh 
+    command: sh -c "npm i && node index.js"
     networks:
       - minhaRede
-    # tty: true    
+    volumes:
+      - ./node:/usr/src/app
+    tty: true    
     depends_on:
       - mysql   
 
@@ -32,7 +35,7 @@ services:
     image: mikaelmicheline/fcmysql      
     container_name: fcmysql
     restart: always
-    # tty: true
+    tty: true
     volumes:
       - ./mysql/mysqlData:/var/lib/mysql
     networks:
